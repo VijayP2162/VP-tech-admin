@@ -59,4 +59,8 @@ Route::get('/active-user', [LoginMasters::class, 'activeuserload'])
 Route::post('/transactionData', [TransMaster::class,'Trsload'])->name('transactionData');
 
 
+#Email Master
+
+
+
 // dd(app(\Illuminate\Contracts\Http\Kernel::class));
