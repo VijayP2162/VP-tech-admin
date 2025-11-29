@@ -118,6 +118,10 @@ Route::post('/BookingMasterload',[BookingMaster::class,'bookingData'])->name('Bo
 use App\Http\Controllers\EmailMigration\EmailMaster;
 
 Route::get('/Email_index',[EmailMaster::class,'index'])->name('Email_index');
+Route::post('/self_mail_communication',[EmailMaster::class,'sendMail'])->name('self_mail_communication');
+
+
+
 
 
 

@@ -37,56 +37,117 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-lg-6">
-                                        <form>
+                                        <form id="self_mail_transaction_master" action="" method="POST">
+
+                                            @csrf
                                             <div class="mb-3">
                                                 <label for="product-name" class="form-label">From</label>
-                                                <input type="text" id="product-name" class="form-control" placeholder="" value="{{session('email')}}" readonly>
+                                                <input type="text" id="send_mail" name="send_mail" class="form-control" placeholder="" value="{{session('email')}}" readonly>
                                             </div>
-                                        </form>
+
                                     </div>
                                     <div class="col-lg-6">
-                                        <form>
-                                            <label for="product-categories" class="form-label">To</label>
 
-                                            <select class="form-control" id="choices-multiple-default" data-choices name="choices-multiple-default" multiple>
-                                                @foreach($email_list as $master_data)
-                                                <option value="{{ $master_data->id }}">{{ $master_data->email }}</option>
-                                                @endforeach
+                                        <label for="product-categories" class="form-label">To</label>
 
-                                            </select>
-
+                                        <select class="form-control" id="to_mail" name="to_mail[]" data-choices multiple>
+                                            @foreach($email_list as $master_data)
+                                            <option value="{{$master_data->email }}">{{ $master_data->email }}</option>
+                                            @endforeach
+                                        </select>
 
                                     </div>
 
                                     <div class="col-lg-6">
-                                        <form>
-                                            <label for="product-categories" class="form-label">Cc</label>
-
-                                            <select class="form-control" id="choices-multiple-default" data-choices name="choices-multiple-default" multiple>
-                                                @foreach($email_list as $master_data)
-                                                <option value="{{ $master_data->id }}">{{ $master_data->email }}</option>
-                                                @endforeach
-
-                                            </select>
-
-
+                                        <label for="product-categories" class="form-label">Cc</label>
+                                        <select class="form-control" id="chcc_mail" name="chcc_mail[]" data-choices multiple>
+                                            @foreach($email_list as $master_data)
+                                            <option value="{{ $master_data->email }}">{{ $master_data->email }}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
 
                                     <div class="mb-3">
                                         <label for="example-textarea" class="form-label">Message</label>
-
-                                        <div id="snow-editor2" style="height: 200px;" class="ql-container ql-snow">
-                                            <div class="ql-editor ql-blank" data-gramm="false" contenteditable="true">
-                                                <p><br></p>
-                                            </div>
-                                            <div class="ql-clipboard" contenteditable="true" tabindex="-1"></div>
-                                            <div class="ql-tooltip ql-hidden"><a class="ql-preview" rel="noopener noreferrer" target="_blank" href="about:blank"></a><input type="number" data-formula="e=mc^2" data-link="https://quilljs.com" data-video="Embed URL"><a class="ql-action"></a><a class="ql-remove"></a></div>
-                                        </div>
+                                        <textarea id="message_data" class="form-control mb-3" cols="62" rows="6" name="message_data">
+                                    </textarea>
                                     </div>
                                 </div>
-                                <input type="submit"  class="btn btn-sm btn-primary">
-                                   
-                                
+                                <input type="submit" class="btn btn-sm btn-primary">
+
+
+
+                                </form>
+                                <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                                <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+                                <script>
+                                    document.addEventListener('DOMContentLoaded', function() {
+                                        new Choices('#to_mail', {
+                                            removeItemButton: true,
+                                            shouldSort: false
+                                        });
+
+                                        new Choices('#chcc_mail', {
+                                            removeItemButton: true,
+                                            shouldSort: false
+                                        });
+                                    });
+                                </script>
+
+
+                                <script>
+                                    $(document).ready(function() {
+
+                                        $("#self_mail_transaction_master").on('submit', function(e) {
+
+                                            e.preventDefault();
+
+                                            var to_mail = $("#to_mail").val(); // <-- this gives correct JS values
+
+                                            if (!to_mail || to_mail.length === 0) {
+                                                swal.fire({
+                                                    title: "Insert the To Mail ID",
+                                                    text: "Empty Field",
+                                                    icon: "error",
+                                                });
+                                                return false;
+                                            }
+
+                                            var formData = new FormData(this); // <-- CORRECT WAY, includes arrays
+
+                                            $.ajax({
+                                                url: "{{route('self_mail_communication') }}",
+                                                method: "POST",
+                                                data: formData,
+                                                processData: false,
+                                                contentType: false,
+                                                dataType: "json",
+
+                                                success: function(response) {
+                                                    console.log("TO VALUES:", to_mail);
+                                                    swal.fire({
+                                                        title: "Mail sent Successfully",
+                                                        text: "Success",
+                                                        icon: "success",
+                                                    });
+                                                },
+                                                error: function(err) {
+                                                    console.log("ERROR:", err);
+                                                    swal.fire({
+                                                        title: "Server Error",
+                                                        text: "Something went wrong",
+                                                        icon: "error",
+                                                    });
+                                                }
+                                            });
+                                        });
+
+                                    });
+                                </script>
+
+
+
 
 
                             </div>
