@@ -39,17 +39,26 @@ class LoginMasters extends Controller
     public function credentails(Request $request)
     {
         $first_step = LoginMaster::where('email', $request->email)->first();
- 
+
         if ($first_step && Hash::check($request->password, $first_step->password)) {
             Session::put('user_id', $first_step->id);
+            Session::put('email', $first_step->email);
 
             $active_user_insert = ActiveMaster::create([
                 'email' => $first_step->email,
                 'username' => $first_step->username,
-                'active_status' => $first_step->id, 
+                'active_status' => $first_step->id,
             ]);
 
-            return view('admin-master.dashboard');
+            $rand_otp = mt_rand(1000, 9999);
+            LoginMaster::where('email', $request->email)
+                ->update(['otp_val' => $rand_otp]);
+
+
+
+
+            return view('admin-master.otp_api', ['rand_otp' => $rand_otp]);
+
         } else {
             return view('admin-master.login');
         }
@@ -67,9 +76,9 @@ class LoginMasters extends Controller
 
     public function activeuserload()
     {
-     $active_user_load = ActiveMaster::orderBy('id', 'desc')->paginate(10);
+        $active_user_load = ActiveMaster::orderBy('id', 'desc')->paginate(10);
 
 
-        return view('admin-master.active-user-master',compact('active_user_load'));
+        return view('admin-master.active-user-master', compact('active_user_load'));
     }
 }
