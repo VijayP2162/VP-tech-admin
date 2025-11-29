@@ -17,4 +17,5 @@ class EmailMaster extends Controller
         $email_list=LoginMaster::where('role',1)->get();
         return view('emails.email-migration',['email_list'=>$email_list]);
     }
+    
 }

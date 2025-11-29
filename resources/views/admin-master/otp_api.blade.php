@@ -29,7 +29,7 @@
                                     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
-                                    <form action="/postotp" method="post">
+                                    <form action="{{url('/postotp')}}" method="post">
                                         @csrf
                                         <div class="mb-3">
                                             <h2>Your OTP is: {{ $rand_otp }}</h2>

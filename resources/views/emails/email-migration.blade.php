@@ -40,7 +40,7 @@
                                         <form>
                                             <div class="mb-3">
                                                 <label for="product-name" class="form-label">From</label>
-                                                <input type="text" id="product-name" class="form-control" placeholder="Items Name" value="{{session('email')}}" readonly>
+                                                <input type="text" id="product-name" class="form-control" placeholder="" value="{{session('email')}}" readonly>
                                             </div>
                                         </form>
                                     </div>

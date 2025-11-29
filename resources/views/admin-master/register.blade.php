@@ -31,7 +31,7 @@
                                              <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
-                                             <form action="/loginRegisteration" method="post">
+                                             <form action="{{url('/loginRegisteration')}}" method="post">
                                                   @csrf
                                                   <div class="mb-3">
                                                        <label class="form-label" for="example-name">Name</label>
