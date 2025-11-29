@@ -64,7 +64,7 @@
                               <div class="collapse" id="sidebarCategory1">
                                    <ul class="nav sub-navbar-nav">
                                         <li class="sub-nav-item">
-                                             <a class="sub-nav-link" href="/transaction_master">Transaction Master</a>
+                                             <a class="sub-nav-link" href="{{url('/transaction_master')}}">Transaction Master</a>
                                         </li>                         
                                         <li class="sub-nav-item">
                                              <a class="sub-nav-link" href="category-edit.html">Edit</a>
@@ -86,7 +86,7 @@
                               <div class="collapse" id="sidebarCategory2">
                                    <ul class="nav sub-navbar-nav">
                                         <li class="sub-nav-item">
-                                             <a class="sub-nav-link" href="/EmailMaster">Email Master</a>
+                                             <a class="sub-nav-link" href="{{url('/EmailMaster')}}">Email Master</a>
                                         </li>                         
                                         <li class="sub-nav-item">
                                              <a class="sub-nav-link" href="category-edit.html">Edit</a>
@@ -108,7 +108,7 @@
                               <div class="collapse" id="sidebarCategory3">
                                    <ul class="nav sub-navbar-nav">
                                         <li class="sub-nav-item">
-                                             <a class="sub-nav-link" href="/BookingMaster">Booking</a>
+                                             <a class="sub-nav-link" href="{{url('/BookingMaster')}}">Booking</a>
                                         </li>                         
                                         <li class="sub-nav-item">
                                              <a class="sub-nav-link" href="category-edit.html">Edit</a>
@@ -129,7 +129,7 @@
                               <div class="collapse" id="sidebarCategory4">
                                    <ul class="nav sub-navbar-nav">
                                         <li class="sub-nav-item">
-                                             <a class="sub-nav-link" href="/Email_index">Email</a>
+                                             <a class="sub-nav-link" href="{{url('/Email_index')}}">Email</a>
                                         </li>                         
                                         <li class="sub-nav-item">
                                              <a class="sub-nav-link" href="category-edit.html">Edit</a>

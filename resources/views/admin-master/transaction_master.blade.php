@@ -40,7 +40,7 @@
                                         <div class="row">
                                             <div class="col-lg-6">
 
-                                                <form action="{{ route('transactionData') }}" method="POST">
+                                                <form action="{{url('transactionData') }}" method="POST">
                                                     @csrf
 
                                                     <div class="mb-3">
