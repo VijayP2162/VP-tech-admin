@@ -55,13 +55,13 @@
                          </li>
 
                          <li class="nav-item">
-                              <a class="nav-link menu-arrow" href="#sidebarCategory" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarCategory">
+                              <a class="nav-link menu-arrow" href="#sidebarCategory1" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarCategory">
                                    <span class="nav-icon">
                                         <iconify-icon icon="solar:clipboard-list-bold-duotone"></iconify-icon>
                                    </span>
                                    <span class="nav-text"> Transaction Master </span>
                               </a>
-                              <div class="collapse" id="sidebarCategory">
+                              <div class="collapse" id="sidebarCategory1">
                                    <ul class="nav sub-navbar-nav">
                                         <li class="sub-nav-item">
                                              <a class="sub-nav-link" href="/transaction_master">Transaction Master</a>
@@ -77,16 +77,16 @@
                          </li>
 
                           <li class="nav-item">
-                              <a class="nav-link menu-arrow" href="#sidebarCategory" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarCategory">
+                              <a class="nav-link menu-arrow" href="#sidebarCategory2" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarCategory">
                                    <span class="nav-icon">
                                         <iconify-icon icon="solar:clipboard-list-bold-duotone"></iconify-icon>
                                    </span>
                                    <span class="nav-text"> Notification Master </span>
                               </a>
-                              <div class="collapse" id="sidebarCategory">
+                              <div class="collapse" id="sidebarCategory2">
                                    <ul class="nav sub-navbar-nav">
                                         <li class="sub-nav-item">
-                                             <a class="sub-nav-link" href="/transaction_master">Email Master</a>
+                                             <a class="sub-nav-link" href="/EmailMaster">Email Master</a>
                                         </li>                         
                                         <li class="sub-nav-item">
                                              <a class="sub-nav-link" href="category-edit.html">Edit</a>
@@ -97,6 +97,52 @@
                                    </ul>
                               </div>
                          </li>
+
+                           <li class="nav-item">
+                              <a class="nav-link menu-arrow" href="#sidebarCategory3" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarCategory">
+                                   <span class="nav-icon">
+                                        <iconify-icon icon="solar:clipboard-list-bold-duotone"></iconify-icon>
+                                   </span>
+                                   <span class="nav-text"> Booking Master
+                              </a>
+                              <div class="collapse" id="sidebarCategory3">
+                                   <ul class="nav sub-navbar-nav">
+                                        <li class="sub-nav-item">
+                                             <a class="sub-nav-link" href="/BookingMaster">Booking</a>
+                                        </li>                         
+                                        <li class="sub-nav-item">
+                                             <a class="sub-nav-link" href="category-edit.html">Edit</a>
+                                        </li>
+                                        <li class="sub-nav-item">
+                                             <a class="sub-nav-link" href="category-add.html">Create</a>
+                                        </li>
+                                   </ul>
+                              </div>
+                         </li>
+                         <li class="nav-item">
+                              <a class="nav-link menu-arrow" href="#sidebarCategory4" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarCategory">
+                                   <span class="nav-icon">
+                                        <iconify-icon icon="solar:clipboard-list-bold-duotone"></iconify-icon>
+                                   </span>
+                                   <span class="nav-text"> Email Master
+                              </a>
+                              <div class="collapse" id="sidebarCategory4">
+                                   <ul class="nav sub-navbar-nav">
+                                        <li class="sub-nav-item">
+                                             <a class="sub-nav-link" href="/Email_index">Email</a>
+                                        </li>                         
+                                        <li class="sub-nav-item">
+                                             <a class="sub-nav-link" href="category-edit.html">Edit</a>
+                                        </li>
+                                        <li class="sub-nav-item">
+                                             <a class="sub-nav-link" href="category-add.html">Create</a>
+                                        </li>
+                                   </ul>
+                              </div>
+                         </li>
+
+
+         
 
 
          

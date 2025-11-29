@@ -260,68 +260,8 @@
 
 
                                     </thead>
-                                    @php
-                                    $total_amount_dr = 0;
-                                    $total_amount_cr = 0;
-
-                                    $final_total_amount=0;
-                                    @endphp
-
-                                    @foreach($MasterData as $index => $transData)
-
-                                   @if(\Carbon\Carbon::parse($transData->created_at)->isToday())
- 
-
-                                    <tr>
-                                        <td>{{ $index + 1 }}</td>
-                                        <td>{{ $transData->created_at }}</td>
-                                        <td>{{ $transData->user_name }}</td>
-                                        <td>{{ $transData->user_email }}</td>
-                                        <td>{{ $transData->transaction_amount }}</td>
-                                        <td>{{ $transData->transaction_type == 1 ? 'Cr' : 'Dr' }}</td>
-
-                                        <td>
-                                            <b style="color:green">
-                                                {{ $transData->transaction_type == 1 ? $transData->transaction_amount . '.00' : '-' }}
-                                            </b>
-                                        </td>
-
-                                        <td class="text-end">
-                                            <b style="color:red" >
-                                                {{ $transData->transaction_type == 2 ? $transData->transaction_amount . '.00' : '-' }}
-                                            </b>
-
-                                            @if($transData->transaction_type == 2)
-                                            @php
-                                            $total_amount_dr += $transData->transaction_amount;
-                                            @endphp
-                                            @else
-                                            @php
-                                            $total_amount_cr += $transData->transaction_amount;
-                                            @endphp
-                                            @endif
-
-
-
-                                        </td>
-                                    </tr>
-                                    @endif
-                                    @endforeach
-
-                                    <tr>
-                                        <td colspan="7" class="text-end"><strong>
-                                            <b style="color:green">Total Cr: ₹ {{ $total_amount_cr }}.00</b></strong></td>
-                                        
-                                        <td colspan="6"><strong> <b style="color:red"> Total Dr: ₹ {{ $total_amount_dr }}.00</b></strong></td>
-                                        
-                                    </tr>
-
-                                    <tr>
-                                        <td colspan="8" class="text-end">
-                                        <b style="color:blue"><strong>Balance Amount : ₹  {{$total_amount_cr-$total_amount_dr}}</strong></b> 
-                                        </td>
-                                    </tr>
-
+                                
+                                    
 
 
 

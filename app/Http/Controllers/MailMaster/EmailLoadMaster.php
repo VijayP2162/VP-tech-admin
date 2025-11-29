@@ -8,4 +8,9 @@ use Illuminate\Http\Request;
 class EmailLoadMaster extends Controller
 {
     //
+
+    public function EmailIndex()
+    {
+        return view('admin-master.Email.Email_Master_view');
+    }
 }
