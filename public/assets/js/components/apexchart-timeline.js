@@ -158,7 +158,7 @@ chart.render();
 
 
 // MULTI SERIES TIMELINE
-var colors = ["#ff6c2f", "#f9b931"];
+var colors = ["#9134e4", "#f9b931"];
 var options = {
     series: [{
         name: 'Bob',

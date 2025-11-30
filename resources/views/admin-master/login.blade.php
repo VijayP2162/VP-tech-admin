@@ -15,11 +15,11 @@
                             <div class="d-flex flex-column h-100 justify-content-center">
                                 <div class="auth-logo mb-4">
                                     <a href="index.html" class="logo-dark">
-                                        <img src="assets/images/logo-dark.png" height="24" alt="logo dark">
+                                        <img src="assets/images/logo-dark.png" alt="logo dark">
                                     </a>
 
                                     <a href="index.html" class="logo-light">
-                                        <img src="assets/images/logo-light.png" height="24" alt="logo light">
+                                        <img src="assets/images/logo-light.png" height="150" alt="logo light">
                                     </a>
                                 </div>
 

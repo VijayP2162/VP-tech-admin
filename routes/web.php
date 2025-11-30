@@ -38,7 +38,7 @@ Route::get('/getotp',[Otp_verfication::class,'verificationOTP'])->name('getotp')
     // do something
 
 
-    Route::get('/transaction_master',[TransMaster::class,'indexMaster']);
+   
 }
 
 Route::post('/verfication',[LoginMasters::class,'credentails'])->name('verfication');
@@ -107,7 +107,7 @@ Route::post('/postotp',[Otp_verfication::class,'verficationmaster'])->name('post
 
 // dd(app(\Illuminate\Contracts\Http\Kernel::class));
 
-
+ Route::get('/transaction_master',[TransMaster::class,'indexMaster']);
 //Booking Master
 
 Route::get('/BookingMaster',[BookingMaster::class,'index'])->name('BookingMaster');
@@ -119,6 +119,12 @@ use App\Http\Controllers\EmailMigration\EmailMaster;
 
 Route::get('/Email_index',[EmailMaster::class,'index'])->name('Email_index');
 Route::post('/self_mail_communication',[EmailMaster::class,'sendMail'])->name('self_mail_communication');
+
+Route::get('/inbox-mail',[EmailMaster::class,'inboxemail'])->name('inbox-mail');
+
+
+Route::get('/download-invoice', [EmailMaster::class, 'downloadInvoice']);
+
 
 
 

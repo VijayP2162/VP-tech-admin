@@ -23,7 +23,7 @@ class Otp_verfication extends Controller
     ]);
 
     // Get first OTP for role=1
-    $otp = LoginMaster::where('role', 1)->first();
+    $otp = LoginMaster::where('email', session('email'))->first();
 
     if ($otp && $request->two_step_otp == $otp->otp_val) {
         // OTP matched

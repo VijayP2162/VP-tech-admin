@@ -7,7 +7,7 @@
 //
 // SIMPLE PIE CHART
 //
-var colors = ["#1c84ee", "#7f56da","#ff6c2f", "#f9b931","#4ecac2"];
+var colors = ["#1c84ee", "#7f56da","#9134e4", "#f9b931","#4ecac2"];
 var options = {
     chart: {
         height: 320,
@@ -49,7 +49,7 @@ chart.render();
 //
 // SIMPLE DONUT CHART
 //
-var colors = ["#7f56da", "#1c84ee","#ff6c2f", "#4ecac2","#f9b931"];
+var colors = ["#7f56da", "#1c84ee","#9134e4", "#4ecac2","#f9b931"];
 var options = {
     chart: {
         height: 320,
@@ -133,7 +133,7 @@ chart.render();
 //
 // GRADIENT DONUT CHART
 //
-var colors = ["#7f56da", "#1c84ee","#ff6c2f", "#4ecac2","#f9b931"];
+var colors = ["#7f56da", "#1c84ee","#9134e4", "#4ecac2","#f9b931"];
 var options = {
     chart: {
         height: 320,
@@ -177,7 +177,7 @@ chart.render();
 //
 // PATTERNED DONUT CHART
 //
-var colors = ["#7f56da", "#1c84ee","#ff6c2f", "#4ecac2","#f9b931"];
+var colors = ["#7f56da", "#1c84ee","#9134e4", "#4ecac2","#f9b931"];
 var options = {
     chart: {
         height: 320,
@@ -304,7 +304,7 @@ chart.render();
 //
 // DONUT UPDATE
 //
-var colors = ["#1c84ee", "#53389f", "#7f56da", "#ff86c8", "#ef5f5f", "#ff6c2f", "#f9b931", "#22c55e", "#040505", "#4ecac2",];
+var colors = ["#1c84ee", "#53389f", "#7f56da", "#ff86c8", "#ef5f5f", "#9134e4", "#f9b931", "#22c55e", "#040505", "#4ecac2",];
 var options = {
     chart: {
         height: 320,

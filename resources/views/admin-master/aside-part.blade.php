@@ -9,7 +9,7 @@
 
                     <a href="index.html" class="logo-light">
                          <img src="assets/images/logo-sm.png" class="logo-sm" alt="logo sm">
-                         <img src="assets/images/logo-light.png" class="logo-lg" alt="logo light">
+                         <img src="assets/images/logo-light.png" >
                     </a>
                </div>
 
@@ -129,10 +129,10 @@
                               <div class="collapse" id="sidebarCategory4">
                                    <ul class="nav sub-navbar-nav">
                                         <li class="sub-nav-item">
-                                             <a class="sub-nav-link" href="{{url('/Email_index')}}">Email</a>
+                                             <a class="sub-nav-link" href="{{url('/Email_index')}}">Send</a>
                                         </li>                         
                                         <li class="sub-nav-item">
-                                             <a class="sub-nav-link" href="category-edit.html">Edit</a>
+                                             <a class="sub-nav-link" href="{{url('/inbox-mail')}}">Inbox</a>
                                         </li>
                                         <li class="sub-nav-item">
                                              <a class="sub-nav-link" href="category-add.html">Create</a>
@@ -140,6 +140,30 @@
                                    </ul>
                               </div>
                          </li>
+
+                         <li class="nav-item">
+                              <a class="nav-link menu-arrow" href="#sidebarCategory5" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarCategory">
+                                   <span class="nav-icon">
+                                        <iconify-icon icon="solar:clipboard-list-bold-duotone"></iconify-icon>
+                                   </span>
+                                   <span class="nav-text"> Invoice Master
+                              </a>
+                              <div class="collapse" id="sidebarCategory5">
+                                   <ul class="nav sub-navbar-nav">
+                                        <li class="sub-nav-item">
+                                             <a class="sub-nav-link" href="{{url('/download-invoice')}}">Sample</a>
+                                        </li>                         
+                                        <li class="sub-nav-item">
+                                             <a class="sub-nav-link" href="{{url('/inbox-mail')}}">Inbox</a>
+                                        </li>
+                                        <li class="sub-nav-item">
+                                             <a class="sub-nav-link" href="category-add.html">Create</a>
+                                        </li>
+                                   </ul>
+                              </div>
+                         </li>
+
+
 
 
          

@@ -17,7 +17,7 @@
         show: false,
       },
     },
-    colors: ["#47ad94", "#ff6c2f"],
+    colors: ["#47ad94", "#9134e4"],
     dataLabels: {
       enabled: false,
     },
