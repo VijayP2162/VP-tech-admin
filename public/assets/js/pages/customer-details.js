@@ -34,7 +34,7 @@ var options = {
     markers: {
       size: 0,
     },
-    colors: ["#FF6C2F"],
+    colors: ["#9134e4"],
     tooltip: {
       fixed: {
         enabled: false,

@@ -67,6 +67,15 @@
                                         </select>
                                     </div>
 
+                                    <div class="col-lg-6">
+                                        <label for="product-categories" class="form-label">Priority</label>
+                                        <select class="form-control" id="" name="Priority">
+                                           <option value="0">select</option>
+                                           <option value="1">Normal</option>
+                                           <option value="2">Medium</option>
+                                           <option value="3">Urgent</option>
+                                        </select>
+                                    </div>
                                     <div class="mb-3">
                                         <label for="example-textarea" class="form-label">Message</label>
                                         <textarea id="message_data" class="form-control mb-3" cols="62" rows="6" name="message_data">
@@ -100,13 +109,16 @@
                                     $(document).ready(function() {
 
                                         $("#self_mail_transaction_master").on('submit', function(e) {
-
                                             e.preventDefault();
 
-                                            var to_mail = $("#to_mail").val(); // <-- this gives correct JS values
+                                            let formData = new FormData(this);
 
-                                            if (!to_mail || to_mail.length === 0) {
-                                                swal.fire({
+                                            // Manually append multiselect arrays
+                                            let toMail = $("#to_mail").val();
+                                            let ccMail = $("#chcc_mail").val();
+
+                                            if (!toMail || toMail.length === 0) {
+                                                Swal.fire({
                                                     title: "Insert the To Mail ID",
                                                     text: "Empty Field",
                                                     icon: "error",
@@ -114,37 +126,31 @@
                                                 return false;
                                             }
 
-                                            var formData = new FormData(this); // <-- CORRECT WAY, includes arrays
+                                            // Add array values correctly
+                                            toMail.forEach(email => formData.append('to_mail[]', email));
+                                            ccMail.forEach(email => formData.append('chcc_mail[]', email));
 
                                             $.ajax({
-                                                url: "{{route('self_mail_communication') }}",
+                                                url: "{{ route('self_mail_communication') }}",
                                                 method: "POST",
                                                 data: formData,
                                                 processData: false,
                                                 contentType: false,
                                                 dataType: "json",
-
                                                 success: function(response) {
-                                                    console.log("TO VALUES:", to_mail);
-                                                    swal.fire({
-                                                        title: "Mail sent Successfully",
-                                                        text: "Success",
-                                                        icon: "success",
-                                                    });
+                                                    Swal.fire("Success", "Mail Sent Successfully", "success");
+                                                    window.location.reload();
                                                 },
-                                                error: function(err) {
-                                                    console.log("ERROR:", err);
-                                                    swal.fire({
-                                                        title: "Server Error",
-                                                        text: "Something went wrong",
-                                                        icon: "error",
-                                                    });
+                                                error: function() {
+                                                    Swal.fire("Error", "Server Error", "error");
                                                 }
                                             });
+
                                         });
 
                                     });
                                 </script>
+
 
 
 

@@ -285,7 +285,7 @@ chart.render();
 //
 // LINE, COLUMN & AREA CHART
 //
-var colors = ["#4ecac2", "#f9b931", "#ff6c2f"];
+var colors = ["#4ecac2", "#f9b931", "#9134e4"];
 var options = {
     chart: {
         height: 380,

@@ -158,7 +158,7 @@ var chart = new ApexCharts(
 chart.render();
 
 // DISTRIBUTED TREEMAP
-var colors = ["#1c84ee", "#ff6c2f", "#f9b931"];
+var colors = ["#1c84ee", "#9134e4", "#f9b931"];
 var options = {
   series: [
     {

@@ -31,7 +31,7 @@ chart.render();
 //
 // RADAR WITH POLYGON-FILL
 //
-var colors = ["#ff6c2f"];
+var colors = ["#9134e4"];
 var options = {
   chart: {
     height: 350,
