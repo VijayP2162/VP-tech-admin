@@ -126,11 +126,16 @@ Route::get('/inbox-mail',[EmailMaster::class,'inboxemail'])->name('inbox-mail');
 Route::get('/download-invoice', [EmailMaster::class, 'downloadInvoice']);
 
 use App\Http\Controllers\InvoiceMaster\InvoiceController;
+use Phiki\Phast\Root;
 
 Route::get('/Quatation_index',[InvoiceController::class,'index'])->name('Quatation_index');
 
+Route::POST('/quatationInsert',[InvoiceController::class,'quatationInsert'])->name('quatationInsert');
+
+Route::get('/Quatation_List',[InvoiceController::class,'Quatation_List'])->name('Quatation_List');
 
 
+Route::get('/download_invoices/{id}',[InvoiceController::class,'download_invoices'])->name('download_invoices');
 
 
 
