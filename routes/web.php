@@ -125,6 +125,13 @@ Route::get('/inbox-mail',[EmailMaster::class,'inboxemail'])->name('inbox-mail');
 
 Route::get('/download-invoice', [EmailMaster::class, 'downloadInvoice']);
 
+use App\Http\Controllers\InvoiceMaster\InvoiceController;
+
+Route::get('/Quatation_index',[InvoiceController::class,'index'])->name('Quatation_index');
+
+
+
+
 
 
 

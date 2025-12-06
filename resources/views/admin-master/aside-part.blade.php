@@ -151,10 +151,10 @@
                               <div class="collapse" id="sidebarCategory5">
                                    <ul class="nav sub-navbar-nav">
                                         <li class="sub-nav-item">
-                                             <a class="sub-nav-link" href="{{url('/download-invoice')}}">Sample</a>
+                                             <a class="sub-nav-link" href="{{url('/download-invoice')}}">Pdf sample</a>
                                         </li>                         
                                         <li class="sub-nav-item">
-                                             <a class="sub-nav-link" href="{{url('/inbox-mail')}}">Inbox</a>
+                                             <a class="sub-nav-link" href="{{url('/Quatation_index')}}">Quatation</a>
                                         </li>
                                         <li class="sub-nav-item">
                                              <a class="sub-nav-link" href="category-add.html">Create</a>
