@@ -157,7 +157,7 @@
                                              <a class="sub-nav-link" href="{{url('/Quatation_index')}}">Quatation</a>
                                         </li>
                                         <li class="sub-nav-item">
-                                             <a class="sub-nav-link" href="category-add.html">Create</a>
+                                             <a class="sub-nav-link" href="{{url('/Quatation_List')}}">Quatation List</a>
                                         </li>
                                    </ul>
                               </div>
