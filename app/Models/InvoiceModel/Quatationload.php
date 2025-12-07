@@ -18,12 +18,12 @@ class Quatationload extends Model
         'organization',
         'quatation_amount',
         'quatation_status',
+        'duration_month',
         'verification_status',
     ];
 
     public function services()
-{
-    return $this->hasMany(Quatationload::class, 'quatation_id', 'quatation_id');
-}
-
+    {
+        return $this->hasMany(Quatationload::class, 'quatation_id', 'quatation_id');
+    }
 }

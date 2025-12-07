@@ -34,6 +34,7 @@ class InvoiceController extends Controller
             'end_date'           => $request->duration_end_date,
             'organization'       => $request->organization,
             'quatation_amount'   => $request->total_amout, // or calculate, because required in DB
+            'duration_month' => $request->service_periods,
             'quatation_status'   => 1,
             'verification_status' => 1,
         ]);
@@ -47,7 +48,9 @@ class InvoiceController extends Controller
     public function Quatation_List()
     {
 
-        $quatation_data = Quatationload::where('verification_status', 1)->get();
+        $quatation_data = Quatationload::where('verification_status', 1)
+        ->orderBy('id','DESC')
+        ->get();
         return view('Invoice-master.Invoice_list_master', ['quatation_data' => $quatation_data]);
     }
 
@@ -60,15 +63,11 @@ class InvoiceController extends Controller
         // dd($services);
 
         $data = [
-            'organization' => $invoice_data->organization,
-            'amount'       => $invoice_data->quatation_amount,
-            'customer'     => $invoice_data->organization,
-            'quotation_id' => $invoice_data->quatation_id,
-            'services'     => $services
+            'services'=> $services
         ];
 
         $pdf = Pdf::loadView('invoice', $data);
 
-        return $pdf->download('invoice_' . $invoice_data->id . '.pdf');
+        return $pdf->download('invoice_' . $invoice_data->quatation_id . '.pdf');
     }
 }
